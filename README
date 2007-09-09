@@ -1,9 +1,7 @@
-#$Id: README,v 1.2 2006/10/13 12:39:08 zag Exp $
-
-XML::Handler::ExtOn 
+Tie::UnionHash
 ========================
 
-Environment which provide object-oriented stuff for create complex web application
+Merge multiple hashes into a one hash
 
 INSTALLATION
 
@@ -15,10 +13,6 @@ To install this module type the following:
    make install
 
 DEPENDENCIES
-
-This module requires  Perl 5.005 or greater and libraries:
-
-* XML::SAX
 
 
 AUTHOR
