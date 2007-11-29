@@ -49,7 +49,7 @@ use Carp;
 use Data::Dumper;
 require Tie::Hash;
 @Tie::UnionHash::ISA     = qw(Tie::StdHash);
-$Tie::UnionHash::VERSION = '0.01';
+$Tie::UnionHash::VERSION = '0.02';
 
 ### install get/set accessors for this object.
 for my $key (qw( _orig_hashes _for_write __temp_array _opt _deleted_keys)) {
@@ -130,9 +130,10 @@ sub GetKeys {
 
     #skip deleted keys
     unless ( $self->_opt->{freeze_keys} ) {
+        my $del_keys_map = $self->_deleted_keys;
         for ( keys %uniq ) {
             delete $uniq{$_}
-              if exists $self->_deleted_keys->{$_};
+              if exists $del_keys_map->{$_};
         }
     }
     return [ keys %uniq ];

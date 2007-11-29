@@ -1,5 +1,6 @@
 Revision history for Perl extension Tie::UnionHash
 #$Id$
+
     - speed optimize  keys %hash 
 0.01
     -initial relize
